@@ -11,6 +11,7 @@ int node_index(listint_t **head, int number)
 {
 	int index = 0;
 	listint_t *node_temp = *head;
+
 	if (node_temp == NULL)
 		return (index);
 
@@ -20,7 +21,7 @@ int node_index(listint_t **head, int number)
 		node_temp = node_temp->next;
 	}
 
-	return index;
+	return (index);
 }
 
 /**
