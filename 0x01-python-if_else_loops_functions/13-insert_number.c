@@ -15,8 +15,13 @@ int node_index(listint_t **head, int number)
 	if (node_temp == NULL)
 		return (index);
 
-	while (node_temp->n < number && node_temp->next != NULL)
+	while (node_temp->n < number)
 	{
+		if (node_temp->next == NULL)
+		{
+			index++;
+			break;
+		}
 		index++;
 		node_temp = node_temp->next;
 	}
