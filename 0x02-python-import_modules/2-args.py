@@ -11,5 +11,5 @@ if __name__ == "__main__":
 
     print("{:d} {}".format(size - 1, str_), end="\n")
     if size > 0:
-        for i in range(1,size):
+        for i in range(1, size):
             print("{:d}: {}".format(i, argv[i]), end="\n")
