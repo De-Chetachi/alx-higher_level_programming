@@ -9,7 +9,7 @@ if __name__ == "__main__":
     elif size > 2:
         str_ = "arguments:"
 
-    print("{:d} {}".format(size - 1, str_), end="\n")
+    print("{:d} {}".format(size - 1, str_))
     if size > 0:
         for i in range(1, size):
-            print("{:d}: {}".format(i, argv[i]), end="\n")
+            print("{:d}: {}".format(i, argv[i]))
