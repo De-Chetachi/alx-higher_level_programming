@@ -1,12 +1,13 @@
-#!/bin/python3
+#!/usr/bin/python3
 if __name__ == "__main__":
     from sys import argv
     size = len(argv)
-    if size == 1:
+    ac = size - 1
+    if ac == 0:
         str_ = "arguments."
-    elif size == 2:
+    elif ac == 1:
         str_ = "argument:"
-    elif size > 2:
+    elif ac > 1:
         str_ = "arguments:"
 
     print("{:d} {}".format(size - 1, str_))
