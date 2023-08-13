@@ -8,7 +8,7 @@ def new_in_list(my_list, idx, element):
             return (my_list)
         else:
             new_list = []
-            for i in range (a):
+            for i in range(a):
                 if i == idx:
                     new_list.append(element)
                 else:
