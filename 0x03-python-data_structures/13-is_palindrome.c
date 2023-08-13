@@ -21,9 +21,8 @@ int is_palindrome(listint_t **head)
 		len++;
 		temp = temp->next;
 	}
-	array = malloc(sizeof(int) * len);
-	if (array == NULL)
-		return (-1);
+	array = malloc(sizeof(int) * (len + 1));
+
 	i = 0;
 	while(temp_)
 	{
