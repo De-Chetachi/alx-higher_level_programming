@@ -2,9 +2,9 @@
 def multiple_returns(sentence):
     if sentence:
         a = len(sentence)
-        if (a <= 0):
-            b = "None"
-        else:
+        if (a > 0):
             b = sentence[0]
-        c = a, b
-        return (c)
+    else:
+        b = "None"
+    c = a, b
+    return (c)
