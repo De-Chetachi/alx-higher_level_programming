@@ -9,7 +9,7 @@
 int is_palindrome(listint_t **head)
 {
 	listint_t *temp, *temp_;
-	int i, j, k, len, *array;
+	int i, j, k, len, *array = NULL;
 
 	if (head == NULL || *head == NULL)
 		return (1);
