@@ -44,7 +44,8 @@ int is_palindrome(listint_t **head)
 		len++;
 		temp = temp->next;
 	}
-	len++;
+	if ((len % 2) != 0)
+		len++;
 	k = 0;
 	while (k < (len / 2))
 	{
