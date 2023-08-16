@@ -10,6 +10,5 @@ replace is the new element
 
 
 def search_replace(my_list, search, replace):
-    if my_list:
-        my_list_ = [replace if ele == search else ele for ele in my_list]
-        return (my_list_)
+    my_list_ = [replace if ele == search else ele for ele in my_list]
+    return (my_list_)
