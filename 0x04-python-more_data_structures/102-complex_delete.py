@@ -8,7 +8,7 @@ All keys having the searched value have to be deleted
 
 def complex_delete(a_dictionary, value):
     keys = []
-    for key, val in  a_dictionary.items():
+    for key, val in a_dictionary.items():
         if val == value:
             keys.append(key)
     for i in keys:
