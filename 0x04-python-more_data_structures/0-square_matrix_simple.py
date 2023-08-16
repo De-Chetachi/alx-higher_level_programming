@@ -1,8 +1,14 @@
 #!/usr/bin/python3
+'''
+a function that computes the square value of all integers of a matrix
+'''
+
+
+def square(n):
+    return (n ** 2)
+
+
 def square_matrix_simple(matrix=[]):
     if matrix:
-        matrix_ = []
-        for i in matrix:
-            a = [x ** 2 for x in i]
-            matrix_.append(a)
-        return(matrix_)
+        matrix_ = [list(map(square, mat)) for mat in matrix]
+        return (matrix_)
