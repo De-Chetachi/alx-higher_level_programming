@@ -31,7 +31,7 @@ void print_python_bytes(PyObject *p)
 		printf("  first %ld bytes:", size_);
 
 		for (i = 0; i < size_; i++)
-			printf(" %02x", bytes->ob_sval[i] & 0xff);
+			printf(" %02x", (int)bytes->ob_sval[i] & 0xff);
 		printf("\n");
 
 	}
