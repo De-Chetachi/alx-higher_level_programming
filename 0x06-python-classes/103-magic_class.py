@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+
+import math
 ''''this module defines a magic class'''
 
 
