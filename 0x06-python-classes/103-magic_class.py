@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 ''''this module defines a magic class'''
-import math
 
 
 class MagicClass:
@@ -8,6 +7,7 @@ class MagicClass:
 
     def __init__(self, radius=0):
         '''the initializer'''
+
         self.__radius = 0
         if type(radius) is not int:
             if type(radius) is not float:
@@ -16,8 +16,10 @@ class MagicClass:
 
     def area(self):
         '''defines the radius of the class'''
+
         return((self.__radius ** 2) * math.pi)
 
     def circumference(self):
         '''defines the circumference of the class'''
+
         return((2 * math.pi) * self.__radius)
