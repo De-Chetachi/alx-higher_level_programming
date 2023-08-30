@@ -21,7 +21,3 @@ class MagicClass:
     def circumference(self):
         '''defines the circumference of the class'''
         return((2 * math.pi) * self.__radius)
-
-
-mc = MagicClass(10)
-print("{:.2f}".format(mc.area()))
