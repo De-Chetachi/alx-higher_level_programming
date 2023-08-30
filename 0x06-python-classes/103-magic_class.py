@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-
-
 ''''this module defines a magic class'''
 
 
 class MagicClass:
     '''this class defines a magic class:)'''
+
     def __init__(self, radius=0):
         '''the initializer'''
         self.__radius = 0
