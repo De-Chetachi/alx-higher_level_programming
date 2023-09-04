@@ -59,6 +59,8 @@ class Rectangle:
     def __str__(self):
         '''defines a private instsance str method'''
         rec = ""
+        if self.__width == 0 or self.__height == 0:
+            return rec
         for i in range(self.__height):
             for j in range(self.__width):
                 rec = rec + "#"
