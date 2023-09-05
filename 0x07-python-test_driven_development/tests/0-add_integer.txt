@@ -1,0 +1,62 @@
+The ``0-add_integer`` module
+============================
+
+Using ``add_integer``
+______________________
+
+First import ``add_integer`` from ``0-add_integer`` module:
+
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+	Now use it:
+	
+	>>> add_integer(2, 5)
+	7
+
+	
+	>>> add_integer(-2)
+	96
+
+
+	>>> add_integer(None, 9)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+
+	>>> add_integer('b', 9)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+
+	>>> add_integer(7, 'b')
+	Traceback (most recent call last):
+	...
+	TypeError: b must be an integer
+
+
+	>>> add_integer('1', 'b')
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+
+	>>> add_integer(9.8, 1)
+	10
+
+
+	>>> add_integer(9.8, 1.8)
+	10
+
+
+	>>> add_integer()
+	Traceback (most recent call last):
+	...
+	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+
+	>>> add_integer(b, 9)
+	Traceback (most recent call last):
+	...
+	NameError: name 'b' is not defined
