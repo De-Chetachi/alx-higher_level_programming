@@ -1,0 +1,102 @@
+#include <Python.h>
+
+/**
+* print_python_float - print some basic info about
+* Python float objects
+* @p: python object
+* Return: void
+*/
+
+void print_python_float(PyObject *p)
+{
+	PyFloatObject *floats;
+
+
+	fflush(stdout);
+	printf("[.] float object info\n");
+
+	if (PyFloat_CheckExact(p))
+	{
+		floats = (PyFloatObject *)p;
+		printf("value: %lf\n", floats->ob_fval);
+	}
+	else
+	{
+		printf("  [ERROR] Invalid Float Object\n");
+	}
+}
+
+
+/**
+* print_python_bytes - print some basic info about
+* Python lists and Python bytes objects
+* @p: python object
+* Return: void
+*/
+
+void print_python_bytes(PyObject *p)
+{
+	PyBytesObject *bytes;
+	long int i, size, size_;
+
+	fflush(stdout);
+	printf("[.] bytes object info\n");
+	if (PyBytes_CheckExact(p))
+	{
+		bytes = (PyBytesObject *)p;
+		size = bytes->ob_base.ob_size;
+		size_ = size + 1;
+
+		printf("  size: %ld\n", bytes->ob_base.ob_size);
+		printf("  trying string: ");
+		for (i = 0; i < size; i++)
+			printf("%c", bytes->ob_sval[i]);
+		printf("\n");
+		if (size > 9)
+		{
+			size_ = 10;
+		}
+		printf("  first %ld bytes:", size_);
+
+		for (i = 0; i < size_; i++)
+			printf(" %02x", (int)bytes->ob_sval[i] & 0xff);
+		printf("\n");
+
+	}
+	else
+		printf("  [ERROR] Invalid Bytes Object\n");
+}
+
+/**
+* print_python_list - prints some basic info about Python lists.
+* @p: pointer to python list
+* Return: void
+*/
+
+void print_python_list(PyObject *p)
+{
+	PyListObject *list_;
+	int i, size;
+
+	fflush(stdout);
+	printf("[*] Python list info\n");
+	if (PyList_CheckExact(p))
+	{
+		list_ = (PyListObject *)p;
+		size = list_->ob_base.ob_size;
+		printf("[*] Size of the Python List = %ld\n", list_->ob_base.ob_size);
+		printf("[*] Allocated = %ld\n", list_->allocated);
+		for (i = 0; i < size; i++)
+		{
+			printf("Element %d: %s\n", i, list_->ob_item[i]->ob_type->tp_name);
+			if (PyBytes_CheckExact(list_->ob_item[i]))
+				print_python_bytes(list_->ob_item[i]);
+			if (PyFloat_CheckExact(list_->ob_item[i]))
+				print_python_float(list_->ob_item[i]);
+		}
+	}
+	else
+	{
+		printf("  [ERROR] Invalid List Object\n");
+	}
+}
