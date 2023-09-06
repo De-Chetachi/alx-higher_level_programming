@@ -42,8 +42,8 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_max_integer_repeat(self):
         '''tests'''
-        result = max_integer([2, 4, 3])
-        self.assertEqual(result, 4)
+        result = max_integer([1, 2, 9, 3, 6])
+        self.assertEqual(result, 9)
 
     def test_max_integer_repeat(self):
         '''tests'''
