@@ -7,37 +7,37 @@ Using ``say_my_name``
 First import ``say_my_name`` from the ``3-say_my_name`` module:
 
 	>>> say_my_name = __import__('3-say_my_name').say_my_name
-	>>> first_name_good = "John"
+	>>> first_name_ok = "John"
 	>>> first_name_none = None
-	>>> first_name_bad_type = 111
+	>>> bad_firstname = 111
 	>>> first_name_empty = ""
 	>>> last_name_good = "Smith"
 	>>> last_name_none = None
-	>>> last_name_bad_type = 222
+	>>> bad_last_name = 222
 	>>> last_name_empty = ""
-	>>> say_my_name(first_name_good)
+	>>> say_my_name(first_name_ok)
 	My name is John 
 	>>> say_my_name(first_name_none)
 	Traceback (most recent call last):
 	...
 	TypeError: first_name must be a string
-	>>> say_my_name(first_name_bad_type)
+	>>> say_my_name(bad_firstname)
 	Traceback (most recent call last):
 	...
 	TypeError: first_name must be a string
 	>>> say_my_name(first_name_empty)
 	My name is  
-	>>> say_my_name(first_name_good, last_name_good)
+	>>> say_my_name(first_name_ok, last_name_good)
 	My name is John Smith
-	>>> say_my_name(first_name_good, last_name_none)
+	>>> say_my_name(first_name_ok, last_name_none)
 	Traceback (most recent call last):
 	...
 	TypeError: last_name must be a string
-	>>> say_my_name(first_name_good, last_name_bad_type)
+	>>> say_my_name(first_name_ok, bad_last_name)
 	Traceback (most recent call last):
 	...
 	TypeError: last_name must be a string
-	>>> say_my_name(first_name_good, last_name_empty)
+	>>> say_my_name(first_name_ok, last_name_empty)
 	My name is John 
 	>>> say_my_name(first_name_none, last_name_good)
 	Traceback (most recent call last):
@@ -47,7 +47,7 @@ First import ``say_my_name`` from the ``3-say_my_name`` module:
 	Traceback (most recent call last):
 	...
 	TypeError: first_name must be a string
-	>>> say_my_name(first_name_none, last_name_bad_type)
+	>>> say_my_name(first_name_none, bad_last_name)
 	Traceback (most recent call last):
 	...
 	TypeError: first_name must be a string
@@ -55,19 +55,11 @@ First import ``say_my_name`` from the ``3-say_my_name`` module:
 	Traceback (most recent call last):
 	...
 	TypeError: first_name must be a string
-	>>> say_my_name(first_name_bad_type, last_name_good)
+	>>> say_my_name(bad_firstname, last_name_good)
 	Traceback (most recent call last):
 	...
 	TypeError: first_name must be a string
-	>>> say_my_name(first_name_bad_type, last_name_none)
-	Traceback (most recent call last):
-	...
-	TypeError: first_name must be a string
-	>>> say_my_name(first_name_bad_type, last_name_bad_type)
-	Traceback (most recent call last):
-	...
-	TypeError: first_name must be a string
-	>>> say_my_name(first_name_bad_type, last_name_empty)
+	>>> say_my_name(bad_firstname, last_name_none)
 	Traceback (most recent call last):
 	...
 	TypeError: first_name must be a string
@@ -77,7 +69,7 @@ First import ``say_my_name`` from the ``3-say_my_name`` module:
 	Traceback (most recent call last):
 	...
 	TypeError: last_name must be a string
-	>>> say_my_name(first_name_empty, last_name_bad_type)
+	>>> say_my_name(first_name_empty, bad_last_name)
 	Traceback (most recent call last):
 	...
 	TypeError: last_name must be a string

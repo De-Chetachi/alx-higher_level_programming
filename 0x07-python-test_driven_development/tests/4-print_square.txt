@@ -7,24 +7,24 @@ Using ``print_square``
 First import ``print_square`` from the ``4-print_square`` module:
 
 	>>> print_square = __import__('4-print_square').print_square
-	>>> size_good = 4
-	>>> size_negative_num = -4
-	>>> size_bad_type = 4.0
-	>>> size_float_less_than_zero = -3.0
-	>>> print_square(size_good)
+	>>> ok_size = 4
+	>>> neg_size = -4
+	>>> float_size = 4.0
+	>>> neg_float = -3.0
+	>>> print_square(ok_size)
 	####
 	####
 	####
 	####
-	>>> print_square(size_negative_num)
+	>>> print_square(neg_size)
 	Traceback (most recent call last):
 	...
 	ValueError: size must be >= 0
-	>>> print_square(size_bad_type)
+	>>> print_square(float_size)
 	Traceback (most recent call last):
 	...
 	TypeError: size must be an integer
-	>>> print_square(size_float_less_than_zero)
+	>>> print_square(neg_float)
 	Traceback (most recent call last):
 	...
 	TypeError: size must be an integer

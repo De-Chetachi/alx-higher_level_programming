@@ -35,6 +35,26 @@ class TestMaxInteger(unittest.TestCase):
         result = max_integer([8, 8, 8])
         self.assertEqual(result, 8)
 
+    def test_max_integer_repeat(self):
+        '''tests'''
+        result = max_integer([8, 6, 7])
+        self.assertEqual(result, 8)
+
+    def test_max_integer_repeat(self):
+        '''tests'''
+        result = max_integer([2, 4, 3])
+        self.assertEqual(result, 4)
+
+    def test_max_integer_repeat(self):
+        '''tests'''
+        result = max_integer([2, -3, 4])
+        self.assertEqual(result, 4)
+
+    def test_max_integer_repeat(self):
+        '''tests'''
+        result = max_integer([-1, -2, -3])
+        self.assertEqual(result, -1)
+
     def test_max_integer_int(self):
         '''tests'''
         with self.assertRaises(Exception):
