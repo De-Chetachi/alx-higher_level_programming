@@ -9,8 +9,10 @@ BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    '''a class Rectangle that inherits
-    from BaseGeometry'''
+    '''
+    a class Rectangle that inherits
+    from BaseGeometry
+    '''
 
     def __init__(self, width, height):
         '''initializes a  rectangle object'''
@@ -21,7 +23,7 @@ class Rectangle(BaseGeometry):
 
     def area(self):
         '''an area method'''
-        return(self.__height * self.__width)
+        return (self.__height * self.__width)
 
     def __str__(self):
         '''defines a private instsance str method'''
