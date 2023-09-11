@@ -13,12 +13,14 @@ class Rectangle(BaseGeometry):
     from BaseGeometry'''
 
     def __init__(self, width, height):
+        '''initializes a  rectangle object'''
         super().integer_validator("width", width)
         super().integer_validator("height", height)
         self.__width = width
         self.__height = height
 
     def area(self):
+        '''an area method'''
         return(self.__height * self.__width)
 
     def __str__(self):
