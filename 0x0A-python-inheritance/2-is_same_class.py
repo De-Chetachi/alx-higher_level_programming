@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-'''this module contains a 
+'''this module contains a
  function that returns True if the object is exactly
  an instance of the specified class ; otherwise False.
  '''
