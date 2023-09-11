@@ -1,0 +1,35 @@
+
+>>> MyList = __import__('1-my_list').MyList
+
+	>>> MyList = __import__('1-my_list').MyList
+	>>> print_sorted = MyList.print_sorted
+	>>> mod_docs = __import__('1-my_list').__doc__
+	>>> class_docs = MyList.__doc__
+	>>> function_docs = print_sorted.__doc__
+	>>> len(mod_docs) > 0
+	True
+	>>> len(class_docs) > 0
+	True
+	>>> len(function_docs) > 0
+	True
+	>>> ordered = MyList([0, 1, 2, 3])
+	>>> unordered = MyList([3, 2, 1, 0])
+	>>> middle = MyList([1, 2, 3, 0])
+	>>> empty = MyList()
+	>>> single = MyList([1])
+	>>> print(ordered)
+	[0, 1, 2, 3]
+	>>> ordered.print_sorted()
+	[0, 1, 2, 3]
+	>>> print(unordered)
+	[3, 2, 1, 0]
+	>>> unordered.print_sorted()
+	[0, 1, 2, 3]
+	>>> print(middle)
+	[1, 2, 3, 0]
+	>>> middle.print_sorted()
+	[0, 1, 2, 3]
+	>>> empty.print_sorted()
+	[]
+	>>> single.print_sorted()
+	[1]
