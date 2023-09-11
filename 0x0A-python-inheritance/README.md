@@ -1,0 +1,1 @@
+inheritance a family line
