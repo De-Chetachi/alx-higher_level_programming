@@ -16,6 +16,7 @@ class Square(Rectangle):
     def area(self):
         '''method calculates the area of square class'''
         return (super().area())
+
     def __str__(self):
         '''defines a private instsance str method'''
         rec = "[Square] {:d}/{:d}".format(self.__size, self.__size)
