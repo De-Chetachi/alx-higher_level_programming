@@ -11,6 +11,6 @@ if path.isfile("add_item.json"):
     list_ = load_from_json_file("add_item.json")
 else:
     list_ = []
-for i in range(1, size):
-    list_.append(argv(i))
+for i in argv[1:]:
+    list_.append(i)
 save_to_json_file(list_, "add_item.json")
