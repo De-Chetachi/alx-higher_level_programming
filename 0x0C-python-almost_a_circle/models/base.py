@@ -2,6 +2,7 @@
 '''base module'''
 from json import dumps
 from json import loads
+import csv
 from os.path import isfile
 
 
@@ -77,3 +78,71 @@ class Base:
 
         return (obj_created)
 
+    """
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        '''serializes'in csv'''
+        filename = "{}.csv".format(cls.__name__)
+        with open(filename, mode='w') as file_:
+            writer = csv.writer(file_, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+            for obj in list_objs:
+                obj_ = obj.to_dictionary()
+                writer.writerow(obj_)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        '''deserializes'in csv'''
+        filename = "{}.csv".format(cls.__name__)
+        list_objs = []
+        if isfile(filename):
+            list_ = []
+            with open(filename, 'r') as file_:
+                reader = csv.reader(file_, delimiter=',')
+                for line in reader:
+                    list_.append(line)
+                    if type(line) is dict:
+                        dicty = list_attr
+                    elif type(line) is list:
+                        dicty = cls.to_dict(line)
+                    list_.append(dicty)
+            for list_attr in list_:
+                create_ = cls.create(**dicty)
+                list_objs.append(create_)
+        return (list_objs)
+
+    
+    @classmethod
+    def to_list(cls, obj):
+        list of object attributes
+        attr_list = []
+        dict_ = obj.to_dictionary()
+        for key, value in dict_.items():
+            attr_list.append(dict_[key])
+        return(attr_list)
+
+
+    @classmethod
+    def to_dict(cls, list_attrs):
+        dict_ = {}
+        list_ = ["id", "width", "height", "x", "y"]
+        list_s = ["id", "size", "x", "y"]
+        dict_['id'] = list_attrs[0]
+
+        i = 1
+        if cls.__name__ == "Rectangle":
+            for key in list_:
+                try:
+                    dict_[key] = list_attrs[i]
+                    i += 1
+                except IndexError:
+                    break
+            return dict_
+        elif cls.__name__ == "Square":
+            for key in list_s:
+                try:
+                    dict_[key] = list_attrs[i]
+                    i += 1
+                except IndexError:
+                    break
+            return (dict_)
+    """
