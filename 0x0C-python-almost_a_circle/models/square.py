@@ -14,7 +14,6 @@ class Square(Rectangle):
             raise ValueError("width must be > 0")
         self.__size = size
 
-
     def __str__(self):
         '''private instance method'''
         rec = "[Square] ({}) {:d}/{:d} - {:d}"
@@ -24,6 +23,7 @@ class Square(Rectangle):
     def size(self):
         '''size getter'''
         return (self.__size)
+
     @size.setter
     def size(self, value):
         '''size setter'''
@@ -34,7 +34,6 @@ class Square(Rectangle):
         self.__width = value
         self.__height = value
         self.__size = value
-
 
     def update(self, *args, **kwargs):
         '''public method  assigns an argument to each attribute'''
@@ -68,10 +67,9 @@ class Square(Rectangle):
             for key, value in kwargs.items():
                 self.__setattr__(key, value)
 
-
     def to_dictionary(self):
         dict_ = {}
         list_ = ["id", "size", "x", "y"]
         for key in list_:
-                dict_[key] = self.__getattribute__(key)
+            dict_[key] = self.__getattribute__(key)
         return (dict_)
