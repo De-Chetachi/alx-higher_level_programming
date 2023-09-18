@@ -2,6 +2,7 @@
 '''rectangle module'''
 from models.base import Base
 
+
 class Rectangle(Base):
     '''Class Rectangle inherits from Base'''
 
@@ -89,11 +90,9 @@ class Rectangle(Base):
             raise ValueError("y must be >= 0")
         self.__y = value
 
-
     def area(self):
         '''returns the area value of the Rectangle instance'''
         return (self.__width * self.__height)
-
 
     def display(self):
         '''prints in stdout the Rectangle instance with the character #'''
@@ -103,7 +102,6 @@ class Rectangle(Base):
             rec = rec + (" " * self.x)
             rec = rec + ("#" * self.__width + '\n')
         print(rec, end="")
-
 
     def __str__(self):
         '''private instance method'''
@@ -138,10 +136,9 @@ class Rectangle(Base):
             for key, value in kwargs.items():
                 self.__setattr__(key, value)
 
-
     def to_dictionary(self):
         dict_ = {}
         list_ = ["id", "width", "height", "x", "y"]
         for key in list_:
-                dict_[key] = self.__getattribute__(key)
+            dict_[key] = self.__getattribute__(key)
         return (dict_)
