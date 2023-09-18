@@ -137,6 +137,7 @@ class Rectangle(Base):
                 self.__setattr__(key, value)
 
     def to_dictionary(self):
+        '''function that returns a dict of the attributes'''
         dict_ = {}
         list_ = ["id", "width", "height", "x", "y"]
         for key in list_:
