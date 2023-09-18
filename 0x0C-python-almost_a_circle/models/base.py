@@ -41,7 +41,6 @@ class Base:
         with open(filename, 'w', encoding="utf-8") as file_:
             file_.write(save)
 
-
     @staticmethod
     def from_json_string(json_string):
         '''returns the list of the JSON string representation json_string'''
@@ -49,12 +48,11 @@ class Base:
             return ([])
         return (loads(json_string))
 
-
     @classmethod
     def create(cls, **dictionary):
         '''returns an instance with all attributes already set'''
         if cls.__name__ == "Rectangle":
-            dummy = cls(1,1)
+            dummy = cls(1, 1)
         elif cls.__name__ == "Square":
             dummy = cls(1)
         else:
@@ -84,7 +82,8 @@ class Base:
         '''serializes'in csv'''
         filename = "{}.csv".format(cls.__name__)
         with open(filename, mode='w') as file_:
-            writer = csv.writer(file_, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
+            writer = csv.writer(file_, delimiter=',', quotechar='"',
+            quoting=csv.QUOTE_MINIMAL)
             for obj in list_objs:
                 obj_ = obj.to_dictionary()
                 writer.writerow(obj_)
@@ -110,7 +109,7 @@ class Base:
                 list_objs.append(create_)
         return (list_objs)
 
-    
+
     @classmethod
     def to_list(cls, obj):
         list of object attributes
