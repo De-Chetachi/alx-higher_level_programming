@@ -68,6 +68,7 @@ class Square(Rectangle):
                 self.__setattr__(key, value)
 
     def to_dictionary(self):
+        '''returns a key value pair of the attributes'''
         dict_ = {}
         list_ = ["id", "size", "x", "y"]
         for key in list_:
