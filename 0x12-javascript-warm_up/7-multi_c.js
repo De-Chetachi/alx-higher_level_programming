@@ -4,7 +4,9 @@
 const argv = (require('process')).argv;
 const num = Number(argv[2]);
 if (isNaN(num)) {
-  console.log('Not a number');
+  console.log('Missing number of occurrences');
 } else {
-  console.log(`My number: ${num}`);
+  for (let i = 0; i < num; i++) {
+    console.log('C is fun');
+  }
 }
