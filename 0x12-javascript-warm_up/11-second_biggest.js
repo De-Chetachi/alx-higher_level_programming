@@ -6,7 +6,7 @@ const len = argv.length;
 const num = Number(argv[2]);
 
 if (isNaN(num) || len === 3) {
-  console.log('0');
+  console.log(0);
 } else {
   const numa = Number(argv[3]);
   const argvNew = argv.slice(4);
@@ -26,6 +26,6 @@ function grt (a, b) {
   return b;
 }
 function les (a, b) {
- if (a < b) return a;
+  if (a < b) return a;
   return b;
 }
