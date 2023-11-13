@@ -8,11 +8,24 @@ const num = Number(argv[2]);
 if (isNaN(num) || len === 3) {
   console.log('0');
 } else {
-  const argvNew = argv.slice(3);
-  let max = num;
+  const numa = Number(argv[3]);
+  const argvNew = argv.slice(4);
+  let max = grt(num, numa);
+  let mas = les(num, numa);
   for (const idx in argvNew) {
-    const numa = Number(argvNew[idx]);
-    if (numa > num) max = numa;
+    const numb = Number(argvNew[idx]);
+    mas = grt(mas, numb);
+    max = grt(mas, max);
+    mas = les(mas, max);
   }
-  console.log(max);
+  console.log(mas);
+}
+
+function grt (a, b) {
+  if (a > b) return a;
+  return b;
+}
+function les (a, b) {
+ if (a < b) return a;
+  return b;
 }
