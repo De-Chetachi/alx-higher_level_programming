@@ -10,8 +10,8 @@ if (isNaN(num) || len === 3) {
 } else {
   const argvNew = argv.slice(3);
   let max = num;
-  for (let idx in argvNew) {
-     const numa = Number(argvNew[idx]);
+  for (const idx in argvNew) {
+    const numa = Number(argvNew[idx]);
     if (numa > num) max = numa;
   }
   console.log(max);
