@@ -15,7 +15,7 @@ if (isNaN(num) || len === 3) {
   for (const idx in argvNew) {
     const numb = Number(argvNew[idx]);
     mas = grt(mas, numb);
-    temp = max;
+    const temp = max;
     max = grt(mas, max);
     mas = les(temp, mas);
   }
