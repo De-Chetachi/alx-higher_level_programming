@@ -18,9 +18,9 @@ def main():
         connect = MySQLdb.connect(host=db_host, port=db_port, user=db_usr,
                                   db=db_name, passwd=db_pass, charset="utf8")
         cur = connect.cursor()
-        query = "SELECT * FROM states WHERE "
-        query += "name REGEXP %s ORDER BY id ASC"
-        cur.execute(query, (match, ))
+        query = "SELECT * FROM states WHERE name REGEXP '"
+        query += "{:s}' ORDER BY id ASC".format(match)
+        cur.execute(query)
         result = cur.fetchall()
         for i in result:
             print(i)
