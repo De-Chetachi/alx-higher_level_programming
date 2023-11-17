@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-'''this module is a script that lists all states from the database hbtn_0e_0_usa:'''
+'''this module is a script that lists all
+states from the database hbtn_0e_0_usa:'''
 
 import MySQLdb
 from sys import argv
+
 
 def main():
     '''defines the main function'''
@@ -10,17 +12,13 @@ def main():
     db_usr = argv[1]
     db_name = argv[3]
     db_host = "localhost"
-    db_port =  3306
+    db_port = 3306
     try:
-        connect = MySQLdb.connect(host=db_host,
-                port=db_port,
-                user=db_usr,
-                db=db_name,
-                passwd=db_pass,
-                charset="utf8"
-                )
+        connect = MySQLdb.connect(host=db_host, port=db_port, user=db_usr,
+                                  db=db_name, passwd=db_pass, charset="utf8")
         cur = connect.cursor()
-        cur.execute("SELECT * FROM states WHERE name REGEXP '^N' ORDER BY id ASC")
+        query = "SELECT * FROM states WHERE name REGEXP '^N' ORDER BY id ASC"
+        cur.execute(query)
         result = cur.fetchall()
         for i in result:
             print(i)
@@ -29,5 +27,6 @@ def main():
     except Exception:
         pass
 
+
 if __name__ == "__main__":
-        main()
+    main()
