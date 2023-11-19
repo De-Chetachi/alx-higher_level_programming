@@ -17,7 +17,8 @@ def main():
         connect = MySQLdb.connect(host=db_host, port=db_port, user=db_usr,
                                   db=db_name, passwd=db_pass, charset="utf8")
         cur = connect.cursor()
-        query = "SELECT * FROM states WHERE name REGEXP '^N' ORDER BY id ASC"
+        query = "SELECT * FROM states WHERE CONVERT(name USING Latin1) "
+        query += "COLLATE Latin1_General_CS REGEXP '^N' ORDER BY id ASC"
         cur.execute(query)
         result = cur.fetchall()
         for i in result:
