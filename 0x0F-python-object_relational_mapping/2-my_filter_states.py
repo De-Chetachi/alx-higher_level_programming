@@ -18,7 +18,7 @@ def main():
         connect = MySQLdb.connect(host=db_host, port=db_port, user=db_usr,
                                   db=db_name, passwd=db_pass, charset="utf8")
         cur = connect.cursor()
-        query = "SELECT * FROM states WHERE name REGEXP BINARY '"
+        query = "SELECT * FROM states WHERE name REGEXP '"
         query += "{:s}' ORDER BY id ASC".format(match)
         cur.execute(query)
         result = cur.fetchall()
