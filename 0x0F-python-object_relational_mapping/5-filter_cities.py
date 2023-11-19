@@ -20,7 +20,7 @@ def main():
         cur = connect.cursor()
         query = "SELECT cities.name FROM cities "
         query += "INNER JOIN states ON cities.state_id = states.id "
-        query += "WHERE states.name = %s"
+        query += "WHERE states.name = %s ORDER BY cities.id"
         cur.execute(query, (match, ))
         result = cur.fetchall()
         length = len(result)
