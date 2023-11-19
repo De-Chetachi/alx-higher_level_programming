@@ -18,9 +18,9 @@ def main():
         connect = MySQLdb.connect(host=db_host, port=db_port, user=db_usr,
                                   db=db_name, passwd=db_pass, charset="utf8")
         cur = connect.cursor()
-        query = "SELECT name FROM cities "
-        query += "WHERE state_id = (SELECT id FROM states "
-        query += "WHERE name = %s) ORDER BY cities.id"
+        query = "SELECT cities.name FROM cities "
+        query += "INNER JOIN states ON cities.state_id = states.id "
+        query += "WHERE states.name = %s"
         cur.execute(query, (match, ))
         result = cur.fetchall()
         length = len(result)
@@ -33,7 +33,7 @@ def main():
         cur.close()
         connect.close()
     except Exception as e:
-        pass
+        print(e)
 
 
 if __name__ == "__main__":
