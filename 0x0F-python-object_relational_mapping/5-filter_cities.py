@@ -18,18 +18,18 @@ def main():
         connect = MySQLdb.connect(host=db_host, port=db_port, user=db_usr,
                                   db=db_name, passwd=db_pass, charset="utf8")
         cur = connect.cursor()
-        query = "SELECT cities.name FROM cities "
+        '''query = "SELECT cities.name FROM cities "
         query += "INNER JOIN states ON cities.state_id = states.id "
-        query += "WHERE states.name = %s ORDER BY cities.id"
+        query += "WHERE states.name = %s ORDER BY cities.id"'''
+        query = "SELECT name FROM cities "
+        query += "WHERE state_id = (SELECT id FROM states "
+        query += "WHERE name = %s)"
         cur.execute(query, (match, ))
         result = cur.fetchall()
-        length = len(result)
-        for i in range(length):
-            city = result[i][0]
-            if i < length - 1:
-                print(city, end=", ")
-            else:
-                print(city)
+        result_list = []
+        for i in result:
+            result_list.append(i)
+        print(", ".join(result_list))
         cur.close()
         connect.close()
     except Exception as e:
