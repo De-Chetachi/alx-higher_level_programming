@@ -20,7 +20,7 @@ def main():
         cur = connect.cursor()
         query = "SELECT name FROM cities "
         query += "WHERE state_id = (SELECT id FROM states "
-        query += "WHERE name = %s)"
+        query += "WHERE name = %s) ORDER BY cities.id"
         cur.execute(query, (match, ))
         result = cur.fetchall()
         length = len(result)
