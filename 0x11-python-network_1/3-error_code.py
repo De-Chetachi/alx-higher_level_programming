@@ -9,10 +9,7 @@ if __name__ == "__main__":
     '''the script definition'''
     # url = 'https://alx-intranet.hbtn.io/status'
     url = sys.argv[1]
-    values = {'email': sys.argv[2]}
-    data = urllib.parse.urlencode(values)
-    data = data.encode('ascii')
-    quest = urllib.request.Request(url, data)
+    quest = urllib.request.Request(url)
     try:
         with urllib.request.urlopen(quest) as response:
             page = response.read()
