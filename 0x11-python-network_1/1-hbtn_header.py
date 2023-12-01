@@ -5,7 +5,7 @@ import sys
 
 if __name__ == "__main__":
     '''the script definition'''
-    #url = 'https://alx-intranet.hbtn.io/status'
+    # url = 'https://alx-intranet.hbtn.io/status'
     url = sys.argv[1]
     quest = urllib.request.Request(url)
     with urllib.request.urlopen(quest) as response:
