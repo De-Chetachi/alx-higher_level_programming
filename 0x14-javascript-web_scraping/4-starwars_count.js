@@ -22,5 +22,5 @@ async function get (url) {
     console.log(charNum);
   });
 }
-const url = 'https://swapi-api.alx-tools.com/api/films/';
+const url = process.argv[2];
 get(url);
