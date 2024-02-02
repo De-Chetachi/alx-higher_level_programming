@@ -7,7 +7,7 @@ function get (url) {
   request(url, { json: true }, (err, response, obj) => {
     //const obj = JSON.parse(body)
     //const people = obj["characters"];
-    for (var i = 0; i < obj.characters.length; i++) {
+    for (let i = 0; i < obj.characters.length; i++) {
         request(obj.characters[i], { json: true }, (error, res, bdy) => {
             console.log(bdy.name);
 	})
