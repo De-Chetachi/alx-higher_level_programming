@@ -3,14 +3,16 @@
 
 const request = require('request');
 
-async function get (url, id) {
+async function get (url) {
   request.get(url, function (err, response, body) {
-    const obj = JSON.parse(body);
-    const res = obj.results;
-    const id_ = id - 1;
-    console.log(res[id_].title);
+    if (err) {
+        console.log(err);
+    } else {
+	const film = JSON.parse(body);
+	console.log(film.title);
+    }
   });
 }
-const url = 'https://swapi-api.alx-tools.com/api/films/';
 const id = process.argv[2];
-get(url, id);
+const url = 'https://swapi-api.alx-tools.com/api/films/' + id;
+get(url);
