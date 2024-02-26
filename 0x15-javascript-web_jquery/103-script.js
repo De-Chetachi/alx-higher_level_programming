@@ -1,7 +1,5 @@
-// #!/usr/bin/node
-// window.onload =
 $(document).ready(function () {
-  $('INPUT#btn_translate').on('click', function () {
+  function callback_ () {
     $.ajax({
       url: 'https://www.fourtonfish.com/hellosalut/hello/',
       type: 'GET',
@@ -19,5 +17,9 @@ $(document).ready(function () {
       // withCredentials: false
       // }
     });
+  }
+  $('INPUT#btn_translate').on('click', callback_);
+  $('INPUT#language_code').on('keydown', (event) => {
+    if (event.key == 'Enter') { callback_(); }
   });
 });
